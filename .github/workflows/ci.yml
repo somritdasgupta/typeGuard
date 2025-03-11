@@ -14,7 +14,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x, 18.x, 20.x] # Updated Node.js versions
+        node-version: [18.x, 20.x] # Only LTS and latest versions
 
     steps:
       - uses: actions/checkout@v3
@@ -51,7 +51,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20.x'
+          node-version: '20.x'  # Use latest for publishing
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
