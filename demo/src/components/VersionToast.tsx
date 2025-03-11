@@ -52,16 +52,25 @@ export const VersionToast: React.FC = () => {
   }, [VERSION.current, currentVersion]);
 
   const message = latestVersion
-    ? `🚀 Type Guard Pro ${latestVersion} is now available! (Current: ${VERSION.current})`
-    : `✨ You're using Type Guard Pro ${VERSION.current}`;
+    ? `A new version (${latestVersion}) of Type Guard Pro is available!`
+    : `Welcome to Type Guard Pro ${VERSION.current}`;
+
+  const handleViewChangelog = () => {
+    window.open(
+      `${VERSION.repository}/releases/tag/v${latestVersion}`,
+      '_blank'
+    );
+  };
 
   return (
     <Toast
       message={message}
       type="success"
       visible={visible}
-      duration={7000}
+      duration={10000}
       onDismiss={() => setVisible(false)}
+      actionLabel={latestVersion ? "What's New?" : undefined}
+      onAction={latestVersion ? handleViewChangelog : undefined}
     />
   );
 };
