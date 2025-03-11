@@ -1,6 +1,6 @@
 {
   "name": "type-guard-pro",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Zero-dependency TypeScript runtime type validation with full type inference",
   "type": "module",
   "main": "./dist/index.cjs",
