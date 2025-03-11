@@ -1,11 +1,27 @@
-# Type Guard Pro
+<p align="center">
+  <img src="demo/public/logo.svg" width="80" height="80" alt="Type Guard Pro Logo" />
+</p>
 
-[![CI](https://github.com/somritdasgupta/typeGuard/actions/workflows/ci.yml/badge.svg)](https://github.com/somritdasgupta/typeGuard/actions/workflows/ci.yml)
-[![npm version](https://img.shields.io/npm/v/type-guard-pro.svg)](https://www.npmjs.com/package/type-guard-pro)
-[![license](https://img.shields.io/npm/l/type-guard-pro.svg)](https://github.com/somritdasgupta/typeGuard/blob/main/LICENSE)
-[![bundle size](https://img.shields.io/bundlephobia/minzip/type-guard-pro)](https://bundlephobia.com/package/type-guard-pro)
+<h1 align="center">Type Guard Pro</h1>
 
-A zero-dependency TypeScript runtime type validation library that provides comprehensive type safety with minimal overhead.
+<p align="center">
+  <a href="https://github.com/somritdasgupta/typeGuard/actions/workflows/ci.yml">
+    <img src="https://github.com/somritdasgupta/typeGuard/actions/workflows/ci.yml/badge.svg" alt="CI" />
+  </a>
+  <a href="https://www.npmjs.com/package/type-guard-pro">
+    <img src="https://img.shields.io/npm/v/type-guard-pro.svg" alt="npm version" />
+  </a>
+  <a href="https://github.com/somritdasgupta/typeGuard/blob/main/LICENSE">
+    <img src="https://img.shields.io/npm/l/type-guard-pro.svg" alt="license" />
+  </a>
+  <a href="https://bundlephobia.com/package/type-guard-pro">
+    <img src="https://img.shields.io/bundlephobia/minzip/type-guard-pro" alt="bundle size" />
+  </a>
+</p>
+
+<p align="center">
+  A zero-dependency TypeScript runtime type validation library that provides comprehensive type safety with minimal overhead.
+</p>
 
 ![Type Guard Pro Demo](demo/public/images/demo-screenshot.png)
 

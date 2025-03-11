@@ -35,6 +35,7 @@
     "prepublishOnly": "npm run security && npm run test && npm run lint && npm run build && npm run update-version",
     "typecheck": "tsc --noEmit",
     "demo": "vite demo",
+    "demo:build": "cd demo && tsc && vite build",
     "benchmark": "node benchmark/index.js",
     "docs": "typedoc src/index.ts",
     "update-version": "node scripts/update-version.cjs",

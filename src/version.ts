@@ -4,8 +4,8 @@
  */
 
 export const VERSION = {
-  current: '0.2.0',
+  current: '1.0.0',
   name: 'Type Guard Pro',
   description: 'Zero-dependency TypeScript runtime type validation',
-  repository: 'https://github.com/your-username/type-guard-pro',
+  repository: 'https://github.com/somritdasgupta/typeGuard',
 };

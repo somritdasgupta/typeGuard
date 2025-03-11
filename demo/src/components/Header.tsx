@@ -2,6 +2,7 @@ import React from 'react';
 import { PackageVersion } from './PackageVersion';
 import { VERSION } from '../../../src/version';
 import { BsGithub } from 'react-icons/bs';
+import { Logo } from './Logo';
 
 interface HeaderProps {
   onOpenMobileMenu: () => void;
@@ -12,12 +13,15 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu }) => {
     <header className="bg-gray-800 border-b border-gray-700 flex-shrink-0">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         {/* Logo and title */}
-        <div className="flex items-center space-x-2">
-          <h1 className="text-lg font-bold">{VERSION.name}</h1>
-          <span className="px-1.5 py-0.5 text-xs bg-blue-800 text-blue-100 uppercase tracking-wide">
-            Demo
-          </span>
-          <PackageVersion packageName="type-guard-pro" />
+        <div className="flex items-center space-x-3">
+          <Logo size="md" />
+          <div className="flex items-center space-x-2">
+            <h1 className="text-lg font-bold">{VERSION.name}</h1>
+            <span className="px-1.5 py-0.5 text-xs bg-blue-800 text-blue-100 uppercase tracking-wide">
+              Demo
+            </span>
+            <PackageVersion packageName="type-guard-pro" />
+          </div>
         </div>
 
         {/* Navigation */}

@@ -1,0 +1,12 @@
+{
+  "buildCommand": "npm run demo:build",
+  "outputDirectory": "demo/dist",
+  "installCommand": "npm install --force",
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
