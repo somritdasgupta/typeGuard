@@ -9,7 +9,7 @@ async function runSmokeTest() {
         if (!guards.number(123)) throw new Error('Number guard failed');
         if (!guards.boolean(true)) throw new Error('Boolean guard failed');
         return true;
-      }
+      },
     },
     {
       name: 'Object Guard',
@@ -22,7 +22,7 @@ async function runSmokeTest() {
           throw new Error('Object guard failed');
         }
         return true;
-      }
+      },
     },
     {
       name: 'Array Guard',
@@ -30,8 +30,8 @@ async function runSmokeTest() {
         const arrayGuard = createGuard<number[]>().array(guards.number);
         if (!arrayGuard([1, 2, 3])) throw new Error('Array guard failed');
         return true;
-      }
-    }
+      },
+    },
   ];
 
   console.log('Starting pre-deployment checks...\n');
@@ -53,9 +53,11 @@ async function runSmokeTest() {
 }
 
 // Run tests and handle process exit
-runSmokeTest().then(success => {
-  process.exit(success ? 0 : 1);
-}).catch(error => {
-  console.error('Fatal error:', error);
-  process.exit(1);
-});
+runSmokeTest()
+  .then((success) => {
+    process.exit(success ? 0 : 1);
+  })
+  .catch((error) => {
+    console.error('Fatal error:', error);
+    process.exit(1);
+  });

@@ -23,13 +23,14 @@ export const Toast: React.FC<ToastProps> = ({
 
   useEffect(() => {
     let dismissTimer: ReturnType<typeof setTimeout>;
+    let autoHideTimer: ReturnType<typeof setTimeout>;
 
-    if (visible) {
+    if (visible && duration > 0) { // Only auto-hide if duration > 0
       dismissTimer = setTimeout(() => {
         setIsLeaving(true);
       }, duration - 500);
 
-      const autoHideTimer = setTimeout(() => {
+      autoHideTimer = setTimeout(() => {
         onDismiss();
         setIsLeaving(false);
       }, duration);

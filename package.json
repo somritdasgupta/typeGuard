@@ -38,10 +38,11 @@
     "demo:build": "cd demo && tsc && vite build",
     "benchmark": "node benchmark/index.js",
     "docs": "typedoc src/index.ts",
-    "update-version": "ts-node scripts/update-version.ts",
+    "update-version": "node --no-warnings --loader ts-node/esm scripts/update-version.ts",
     "security": "npm audit && npm audit fix",
     "precheck": "npm run build && npm run test && npm run lint",
-    "check-deployment": "node --no-warnings --loader ts-node/esm --experimental-specifier-resolution=node scripts/check-deployment.ts"
+    "check-deployment": "node --no-warnings --loader ts-node/esm --experimental-specifier-resolution=node scripts/check-deployment.ts",
+    "version": "npm run update-version && git add src/version.ts"
   },
   "keywords": [
     "typescript",

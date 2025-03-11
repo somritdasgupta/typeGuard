@@ -52,7 +52,7 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/v')
     permissions:
       contents: read
-      packages: write # Add packages permission
+      packages: write
       id-token: write
 
     steps:
@@ -85,9 +85,11 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@somritdasgupta'
 
-      - name: Publish to GitHub Packages
+      - name: Update package name for GitHub Packages
         run: |
-          echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
-          npm publish
+          node -e "const pkg = require('./package.json'); pkg.name = '@somritdasgupta/type-guard-pro'; require('fs').writeFileSync('package.json', JSON.stringify(pkg, null, 2));"
+
+      - name: Publish to GitHub Packages
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
