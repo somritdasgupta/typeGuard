@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     tags:
-      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+      - 'v*'
   pull_request:
     branches: [main]
 
@@ -14,7 +14,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [16.x, 18.x, 20.x] # Updated Node.js versions
 
     steps:
       - uses: actions/checkout@v3
@@ -24,11 +24,12 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
+
       - name: Install dependencies
         run: |
-          rm -f package-lock.json
-          npm install
-          npm ci
+          rm -rf node_modules
+          npm install --force
+          npm audit fix --force
 
       - name: Build
         run: npm run build
@@ -42,7 +43,6 @@ jobs:
   publish:
     needs: test
     runs-on: ubuntu-latest
-    # Only publish on version tags
     if: startsWith(github.ref, 'refs/tags/v')
 
     steps:
@@ -51,14 +51,14 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x'
+          node-version: '20.x'
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
         run: |
-          rm -f package-lock.json
-          npm install
-          npm ci
+          rm -rf node_modules
+          npm install --force
+          npm audit fix --force
 
       - name: Build
         run: npm run build
