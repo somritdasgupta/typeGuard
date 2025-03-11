@@ -38,7 +38,7 @@
     "demo:build": "cd demo && tsc && vite build",
     "benchmark": "node benchmark/index.js",
     "docs": "typedoc src/index.ts",
-    "update-version": "node scripts/update-version.cjs",
+    "update-version": "ts-node scripts/update-version.ts",
     "security": "npm audit && npm audit fix"
   },
   "keywords": [
@@ -61,7 +61,7 @@
   "author": "Somrit Dasgupta",
   "repository": {
     "type": "git",
-    "url": "https://github.com/somritdasgupta/typeGuard"
+    "url": "https://github.com/somritdasgupta/typeGuard.git"
   },
   "license": "MIT",
   "devDependencies": {

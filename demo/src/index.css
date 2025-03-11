@@ -1,4 +1,4 @@
-/* These are valid Tailwind directives processed by PostCSS */
+/* @ts-ignore -- These are valid Tailwind directives processed by PostCSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
