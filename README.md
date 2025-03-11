@@ -36,7 +36,7 @@
 
 ## Try it Online
 
-[Live Demo](https://typeguard.somrit.in - Experiment with the library in your browser
+[Live Demo](https://typeguard.somrit.in) - Experiment with the library in your browser
 
 ## Installation
 
