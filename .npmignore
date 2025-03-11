@@ -1,0 +1,27 @@
+# Ignore everything
+*
+
+# Only include dist files
+!dist/index.js
+!dist/index.cjs
+!dist/index.d.ts
+!LICENSE
+!README.md
+
+# Explicit ignores
+*.map
+*.log
+.DS_Store
+.env*
+.git*
+.npm*
+.eslint*
+.prettier*
+.vscode
+node_modules
+coverage
+demo
+docs
+scripts
+src
+test

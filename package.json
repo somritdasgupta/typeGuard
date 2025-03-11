@@ -1,0 +1,97 @@
+{
+  "name": "type-guard-pro",
+  "version": "0.2.0",
+  "description": "Zero-dependency TypeScript runtime type validation with full type inference",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist/index.js",
+    "dist/index.cjs",
+    "dist/index.d.ts"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean && npx terser dist/index.js -c -m -o dist/index.js && npx terser dist/index.cjs -c -m -o dist/index.cjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint src --ext .ts",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run security && npm run test && npm run lint && npm run build && npm run update-version",
+    "typecheck": "tsc --noEmit",
+    "demo": "vite demo",
+    "benchmark": "node benchmark/index.js",
+    "docs": "typedoc src/index.ts",
+    "update-version": "node scripts/update-version.cjs",
+    "security": "npm audit && npm audit fix"
+  },
+  "keywords": [
+    "typescript",
+    "type-guard",
+    "validation",
+    "runtime",
+    "type-safety",
+    "type-inference",
+    "validation-library",
+    "runtime-types",
+    "zero-deps",
+    "schema",
+    "tuple",
+    "literal",
+    "intersection",
+    "record",
+    "refined"
+  ],
+  "author": "Somrit Dasgupta",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/somritdasgupta/typeGuard"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@monaco-editor/react": "^4.6.0",
+    "@types/node": "^20.8.0",
+    "@types/react": "^18.2.24",
+    "@types/react-dom": "^18.2.8",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "@vitejs/plugin-react": "^4.1.0",
+    "@vitest/coverage-v8": "^3.0.8",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^8.57.1",
+    "glob": "^11.0.1",
+    "postcss": "^8.5.3",
+    "prettier": "^3.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rimraf": "^6.0.1",
+    "tailwindcss": "^3.4.17",
+    "tsup": "^8.4.0",
+    "typedoc": "^0.25.1",
+    "typescript": "^5.2.2",
+    "vite": "^6.2.1",
+    "vitest": "^3.0.8",
+    "terser": "^5.29.1"
+  },
+  "engines": {
+    "node": ">=14.16"
+  },
+  "dependencies": {
+    "react-icons": "^5.5.0"
+  }
+}

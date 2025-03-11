@@ -1,0 +1,79 @@
+/* These are valid Tailwind directives processed by PostCSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-gray-850 {
+  background-color: #1a1e24;
+}
+
+/* Add custom gradient text utilities */
+@layer utilities {
+  .text-gradient {
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  .scrolling-touch {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Fix for iOS fixed height containers with overflow */
+  .ios-fix {
+    height: 100%;
+    height: -webkit-fill-available;
+  }
+
+  /* Fixed height containers for desktop layout */
+  .desktop-top-panel {
+    height: 45vh;
+    max-height: 45vh;
+    min-height: 45vh;
+  }
+
+  .desktop-bottom-panel {
+    height: 50vh;
+    max-height: 50vh;
+    min-height: 50vh;
+  }
+}
+
+/* Ensure the document fills the viewport */
+html,
+body,
+#root {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Prevent layout shift on iOS */
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  overflow: hidden;
+}
+
+/* Fix editor sizing */
+.monaco-editor {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Animation for the toast */
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out forwards;
+}
